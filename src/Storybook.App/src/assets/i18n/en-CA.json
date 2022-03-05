@@ -2,5 +2,8 @@
   "common": {
     "storybook": "Storybook",
     "campaign": "Campaign"
+  },
+  "commom": {
+    "campaign": "Campaign"
   }
 }
