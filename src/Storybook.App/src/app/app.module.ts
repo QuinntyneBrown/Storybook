@@ -31,16 +31,5 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-  // static forRoot(): ModuleWithProviders<AppModule> {
-  //   return {
-  //     ngModule: AppModule,
-  //     providers: TranslateModule.forRoot({
-  //       loader: {
-  //         provide: TranslateLoader,
-  //         useFactory: HttpLoaderFactory,
-  //         deps: [HttpClient]
-  //       }
-  //     }).providers
-  //   };
-  // }
+
 }
