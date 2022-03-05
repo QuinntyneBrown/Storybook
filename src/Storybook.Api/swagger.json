@@ -1,0 +1,1124 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Storybook",
+    "description": "",
+    "termsOfService": "https://example.com/terms",
+    "contact": {
+      "name": "",
+      "email": ""
+    },
+    "license": {
+      "name": "Use under MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Campaign/{campaignId}": {
+      "get": {
+        "tags": [
+          "Campaign"
+        ],
+        "summary": "Get Campaign by id.",
+        "description": "Get Campaign by id.",
+        "operationId": "getCampaignById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "campaignId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GetCampaignByIdResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Campaign"
+        ],
+        "summary": "Delete Campaign.",
+        "description": "Delete Campaign.",
+        "operationId": "removeCampaign",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "campaignId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/RemoveCampaignResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Campaign": {
+      "get": {
+        "tags": [
+          "Campaign"
+        ],
+        "summary": "Get Campaigns.",
+        "description": "Get Campaigns.",
+        "operationId": "getCampaigns",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GetCampaignsResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Campaign"
+        ],
+        "summary": "Create Campaign.",
+        "description": "Create Campaign.",
+        "operationId": "createCampaign",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateCampaignRequest"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CreateCampaignResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Campaign"
+        ],
+        "summary": "Update Campaign.",
+        "description": "Update Campaign.",
+        "operationId": "updateCampaign",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateCampaignRequest"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/UpdateCampaignResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Campaign/page/{pageSize}/{index}": {
+      "get": {
+        "tags": [
+          "Campaign"
+        ],
+        "summary": "Get Campaign Page.",
+        "description": "Get Campaign Page.",
+        "operationId": "getCampaignsPage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pageSize",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GetCampaignsPageResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Donation/{donationId}": {
+      "get": {
+        "tags": [
+          "Donation"
+        ],
+        "summary": "Get Donation by id.",
+        "description": "Get Donation by id.",
+        "operationId": "getDonationById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "donationId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GetDonationByIdResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Donation"
+        ],
+        "summary": "Delete Donation.",
+        "description": "Delete Donation.",
+        "operationId": "removeDonation",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "donationId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/RemoveDonationResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Donation": {
+      "get": {
+        "tags": [
+          "Donation"
+        ],
+        "summary": "Get Donations.",
+        "description": "Get Donations.",
+        "operationId": "getDonations",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GetDonationsResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Donation"
+        ],
+        "summary": "Create Donation.",
+        "description": "Create Donation.",
+        "operationId": "createDonation",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateDonationRequest"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CreateDonationResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Donation"
+        ],
+        "summary": "Update Donation.",
+        "description": "Update Donation.",
+        "operationId": "updateDonation",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateDonationRequest"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/UpdateDonationResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Donation/page/{pageSize}/{index}": {
+      "get": {
+        "tags": [
+          "Donation"
+        ],
+        "summary": "Get Donation Page.",
+        "description": "Get Donation Page.",
+        "operationId": "getDonationsPage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pageSize",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GetDonationsPageResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Employee/{employeeId}": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Get Employee by id.",
+        "description": "Get Employee by id.",
+        "operationId": "getEmployeeById",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GetEmployeeByIdResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Delete Employee.",
+        "description": "Delete Employee.",
+        "operationId": "removeEmployee",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "employeeId",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/RemoveEmployeeResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Employee": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Get Employees.",
+        "description": "Get Employees.",
+        "operationId": "getEmployees",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GetEmployeesResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Create Employee.",
+        "description": "Create Employee.",
+        "operationId": "createEmployee",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/CreateEmployeeRequest"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/CreateEmployeeResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Update Employee.",
+        "description": "Update Employee.",
+        "operationId": "updateEmployee",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdateEmployeeRequest"
+            }
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/UpdateEmployeeResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/Employee/page/{pageSize}/{index}": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "summary": "Get Employee Page.",
+        "description": "Get Employee Page.",
+        "operationId": "getEmployeesPage",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pageSize",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "path",
+            "name": "index",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "500": {
+            "description": "Server Error"
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/ProblemDetails"
+            }
+          },
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GetEmployeesPageResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CampaignDto": {
+      "type": "object",
+      "properties": {
+        "campaignId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "CreateCampaignRequest": {
+      "type": "object",
+      "properties": {
+        "campaign": {
+          "$ref": "#/definitions/CampaignDto"
+        }
+      }
+    },
+    "CreateCampaignResponse": {
+      "type": "object",
+      "properties": {
+        "campaign": {
+          "$ref": "#/definitions/CampaignDto"
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "CreateDonationRequest": {
+      "type": "object",
+      "properties": {
+        "donation": {
+          "$ref": "#/definitions/DonationDto"
+        }
+      }
+    },
+    "CreateDonationResponse": {
+      "type": "object",
+      "properties": {
+        "donation": {
+          "$ref": "#/definitions/DonationDto"
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "CreateEmployeeRequest": {
+      "type": "object",
+      "properties": {
+        "employee": {
+          "$ref": "#/definitions/EmployeeDto"
+        }
+      }
+    },
+    "CreateEmployeeResponse": {
+      "type": "object",
+      "properties": {
+        "employee": {
+          "$ref": "#/definitions/EmployeeDto"
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "DonationDto": {
+      "type": "object",
+      "properties": {
+        "donationId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "amount": {
+          "format": "double",
+          "type": "number"
+        },
+        "paymentMethodName": {
+          "type": "string"
+        },
+        "isPerpetual": {
+          "type": "boolean"
+        }
+      }
+    },
+    "EmployeeDto": {
+      "type": "object",
+      "properties": {
+        "employeeId": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "GetCampaignByIdResponse": {
+      "type": "object",
+      "properties": {
+        "campaign": {
+          "$ref": "#/definitions/CampaignDto"
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GetCampaignsPageResponse": {
+      "type": "object",
+      "properties": {
+        "length": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CampaignDto"
+          }
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GetCampaignsResponse": {
+      "type": "object",
+      "properties": {
+        "campaigns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CampaignDto"
+          }
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GetDonationByIdResponse": {
+      "type": "object",
+      "properties": {
+        "donation": {
+          "$ref": "#/definitions/DonationDto"
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GetDonationsPageResponse": {
+      "type": "object",
+      "properties": {
+        "length": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DonationDto"
+          }
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GetDonationsResponse": {
+      "type": "object",
+      "properties": {
+        "donations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DonationDto"
+          }
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GetEmployeeByIdResponse": {
+      "type": "object",
+      "properties": {
+        "employee": {
+          "$ref": "#/definitions/EmployeeDto"
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GetEmployeesPageResponse": {
+      "type": "object",
+      "properties": {
+        "length": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EmployeeDto"
+          }
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GetEmployeesResponse": {
+      "type": "object",
+      "properties": {
+        "employees": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EmployeeDto"
+          }
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ProblemDetails": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "status": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "instance": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": { }
+    },
+    "RemoveCampaignResponse": {
+      "type": "object",
+      "properties": {
+        "campaign": {
+          "$ref": "#/definitions/CampaignDto"
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "RemoveDonationResponse": {
+      "type": "object",
+      "properties": {
+        "donation": {
+          "$ref": "#/definitions/DonationDto"
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "RemoveEmployeeResponse": {
+      "type": "object",
+      "properties": {
+        "employee": {
+          "$ref": "#/definitions/EmployeeDto"
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "UpdateCampaignRequest": {
+      "type": "object",
+      "properties": {
+        "campaign": {
+          "$ref": "#/definitions/CampaignDto"
+        }
+      }
+    },
+    "UpdateCampaignResponse": {
+      "type": "object",
+      "properties": {
+        "campaign": {
+          "$ref": "#/definitions/CampaignDto"
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "UpdateDonationRequest": {
+      "type": "object",
+      "properties": {
+        "donation": {
+          "$ref": "#/definitions/DonationDto"
+        }
+      }
+    },
+    "UpdateDonationResponse": {
+      "type": "object",
+      "properties": {
+        "donation": {
+          "$ref": "#/definitions/DonationDto"
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "UpdateEmployeeRequest": {
+      "type": "object",
+      "properties": {
+        "employee": {
+          "$ref": "#/definitions/EmployeeDto"
+        }
+      }
+    },
+    "UpdateEmployeeResponse": {
+      "type": "object",
+      "properties": {
+        "employee": {
+          "$ref": "#/definitions/EmployeeDto"
+        },
+        "validationErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

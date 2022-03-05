@@ -1,0 +1,76 @@
+{
+  "isRoot": true,
+  "endpointType": 0,
+  "minimal": false,
+  "prefix": "app",
+  "idFormat": 0,
+  "idDotNetType": 1,
+  "isMicroserviceArchitecture": false,
+  "projects": [],
+  "rootDirectory": "C:\\projects\\Storybook",
+  "solutionName": "Storybook",
+  "solutionFileName": "Storybook.sln",
+  "apiFullPath": "C:\\projects\\Storybook\\src\\Storybook.Api\\Storybook.Api.csproj",
+  "rootNamespace": "Storybook",
+  "domainNamespace": "Storybook.Core",
+  "applicationNamespace": "Storybook.Core",
+  "infrastructureNamespace": "Storybook.Infrastructure",
+  "apiNamespace": "Storybook.Api",
+  "domainDirectory": "C:\\projects\\Storybook\\src\\Storybook.SharedKernel",
+  "applicationDirectory": "C:\\projects\\Storybook\\src\\Storybook.Core",
+  "infrastructureDirectory": "C:\\projects\\Storybook\\src\\Storybook.Infrastructure",
+  "apiDirectory": "C:\\projects\\Storybook\\src\\Storybook.Api",
+  "unitTestsDirectory": "C:\\projects\\Storybook\\tests\\Storybook.UnitTests",
+  "testingDirectory": "C:\\projects\\Storybook\\tests\\Storybook.Testing",
+  "appDirectories": [],
+  "buildingBlocksCoreNamespace": "BuildingBlocks.Core",
+  "buildingBlocksEventStoreNamespace": "BuildingBlocks.EventStore",
+  "sourceFolder": "src",
+  "testFolder": "tests",
+  "dbContextName": "StorybookDbContext",
+  "port": 5000,
+  "sslPort": 5001,
+  "plugins": null,
+  "entities": [],
+  "resources": [
+    {
+      "properties": [],
+      "entities": [],
+      "name": "Donation",
+      "idPropertyName": "DonationId",
+      "idPropertyType": "int"
+    },
+    {
+      "properties": [],
+      "entities": [],
+      "name": "Campaign",
+      "idPropertyName": "CampaignId",
+      "idPropertyType": "int"
+    },
+    {
+      "properties": [
+        {
+          "accessModifier": "public",
+          "type": "int",
+          "accessors": [
+            {
+              "accessModifier": null,
+              "type": 0
+            },
+            {
+              "accessModifier": "private",
+              "type": 1
+            }
+          ],
+          "name": "EmployeeId",
+          "required": true,
+          "key": true
+        }
+      ],
+      "entities": [],
+      "name": "Employee",
+      "idPropertyName": "EmployeeId",
+      "idPropertyType": "int"
+    }
+  ]
+}
